@@ -33,7 +33,7 @@ def G(m, n):
         return x_pow(n * 2)
     if m == 3:
         return n3_G(n)
-    return x_pow(1)
+    return x_pow(1) # TODO: implement this
 
 def g(m, n):
     '''
