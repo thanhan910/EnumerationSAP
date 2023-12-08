@@ -36,4 +36,9 @@ def G(m, n):
     return x_pow(1)
 
 def g(m, n):
+    '''
+    Polynomial representations of self-avoiding polygons that fit within a m x n rectangle and span the entire length n and width m.
+    sum of u(i) * x^i
+    u(i) = number of self-avoiding polygons of length i that fit within a m x n rectangle and span the entire  length n and width m.
+    '''
     return G(m, n) + G(m - 1, n) * -2 + G(m - 2, n)
