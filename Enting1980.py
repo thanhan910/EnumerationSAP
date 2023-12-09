@@ -42,3 +42,13 @@ def g(m, n):
     u(i) = number of self-avoiding polygons of length i that fit within a m x n rectangle and span the entire  length n and width m.
     '''
     return G(m, n) + G(m - 1, n) * -2 + G(m - 2, n)
+
+def enumerate_saps(length):
+    if length <= 3 or length % 2 == 1:
+        return 0
+    P = np.polynomial.Polynomial([0])
+    for x in range(1, length // 2):
+        y = length - x
+        P += g(x, y)
+    P += g(length // 2, length // 2)
+    return P.coef[length]
