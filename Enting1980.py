@@ -48,7 +48,6 @@ def enumerate_saps(length):
         return 0
     P = np.polynomial.Polynomial([0])
     for x in range(1, length // 2):
-        y = length - x
+        y = length // 2 - x
         P += g(x, y)
-    P += g(length // 2, length // 2)
     return P.coef[length]
